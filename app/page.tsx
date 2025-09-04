@@ -10,8 +10,6 @@ import { CheckCircle } from 'lucide-react';
 export const LandingPage = () => {
   const { theme, setTheme } = useTheme();
 
-  console.log(theme);
-
   return (
     <div className='min-h-screen bg-background'>
       {/* Header */}
