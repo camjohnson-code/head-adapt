@@ -1,49 +1,17 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { useTheme } from 'next-themes';
 import { Activity, Sun, Moon, TrendingUp, Thermometer, BarChart3 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle } from 'lucide-react';
 // import dashboardScreenshot from '@/assets/dashboard-screenshot.jpg';
+import { Header } from '@/components/Header';
 
 export const LandingPage = () => {
-  const { theme, setTheme } = useTheme();
-
   return (
     <div className='min-h-screen bg-background'>
       {/* Header */}
-      <header className='border-b border-gray-200/30 dark:border-gray-700/30 bg-card/10 backdrop-blur-sm'>
-        <div className='max-w-7xl mx-auto px-6 py-4'>
-          <div className='flex items-center justify-between'>
-            <div className='flex items-center space-x-3'>
-              <div className='p-2 bg-gradient-primary rounded-lg animate-fitness-pulse'>
-                <Activity className='h-6 w-6 text-primary-foreground' />
-              </div>
-              <div>
-                <h1 className='text-xl font-bold text-foreground'>FitAdapt</h1>
-                <p className='text-sm text-muted-foreground'>Heat Adaptation Analytics</p>
-              </div>
-            </div>
-            <div className='flex items-center space-x-4'>
-              <Button
-                variant='ghost'
-                size='sm'
-                onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-                className='h-8 w-8 p-0 cursor-pointer'
-              >
-                {theme === 'light' ? <Moon className='h-4 w-4' /> : <Sun className='h-4 w-4' />}
-              </Button>
-              <Button
-                className='bg-gradient-primary cursor-pointer hover:shadow-fitness font-medium'
-                style={{ color: 'hsl(var(--primary-foreground))' }}
-              >
-                Sign In
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <main className='max-w-7xl mx-auto px-6'>
