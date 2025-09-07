@@ -13,21 +13,6 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Thermometer } from 'lucide-react';
 import { WeeklyTrendData } from '@/types/dashboard';
 
-// Sample data showing weekly gains/losses in adaptation
-const weeklyTrends = [
-  { week: 'Week 1', gain: 2, category: 'gain' },
-  { week: 'Week 2', gain: 1, category: 'gain' },
-  { week: 'Week 3', gain: 3, category: 'strong_gain' },
-  { week: 'Week 4', gain: 2, category: 'gain' },
-  { week: 'Week 5', gain: -1, category: 'loss' },
-  { week: 'Week 6', gain: 4, category: 'strong_gain' },
-  { week: 'Week 7', gain: 2, category: 'gain' },
-  { week: 'Week 8', gain: 1, category: 'gain' },
-  { week: 'Week 9', gain: 3, category: 'strong_gain' },
-  { week: 'Week 10', gain: 1, category: 'gain' },
-  { week: 'Week 11', gain: 2, category: 'gain' },
-  { week: 'Week 12', gain: 3, category: 'strong_gain' },
-];
 
 const getBarColor = (category: string) => {
   switch (category) {
