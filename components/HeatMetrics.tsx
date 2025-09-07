@@ -116,7 +116,7 @@ export const HeatMetrics = ({ data, isLoading = true }: HeatMetricsProps) => {
         value={`${data.performanceIndex}/10`}
         change={data.performanceIndexChange}
         trend='up'
-        icon={<BarChart3 className='h-6 w-6 text-fitness'></BarChart3>}
+        icon={<BarChart3 className='h-6 w-6 text-fitness' />}
       />
     </div>
   );
