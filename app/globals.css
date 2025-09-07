@@ -34,8 +34,12 @@
   --fitness-primary: 16 90% 58%; /* Sunset Orange */
   --fitness-secondary: 330 85% 67%; /* Vibrant Pink */
   --fitness-accent: 25 95% 63%; /* Warm Orange */
-  --fitness-success: 142 76% 68%; /* Green stays for success */
-  --fitness-warning: 45 93% 70%; /* Yellow warning */
+  --fitness-success: 142 76% 25%; /* Darker green */
+  --fitness-warning: 0 70% 50%; /* Soft red warning */
+
+  /* Loading skeleton colors */
+  --skeleton-background: 240 4.8% 85%;
+  --skeleton-foreground: 240 5.9% 10%;
 
   /* Light mode gradients */
   --gradient-primary: linear-gradient(
@@ -95,6 +99,10 @@
 
   /* Fitness color classes */
   --color-fitness-primary: hsl(var(--fitness-primary));
+  --color-fitness-secondary: hsl(var(--fitness-secondary));
+  --color-fitness-accent: hsl(var(--fitness-accent));
+  --color-fitness-success: hsl(var(--fitness-success));
+  --color-fitness-warning: hsl(var(--fitness-warning));
 }
 
 .dark {
@@ -127,6 +135,17 @@
   --input: 224 15% 14%;
   --ring: 16 90% 58%;
 
+  /* Fitness theme colors */
+  --fitness-primary: 16 90% 58%; /* Sunset Orange */
+  --fitness-secondary: 330 85% 67%; /* Vibrant Pink */
+  --fitness-accent: 25 95% 63%; /* Warm Orange */
+  --fitness-success: 142 76% 68%;   /* Green for success */
+  --fitness-warning: 0 70% 60%; /* Soft red warning */
+
+  /* Dark mode loading skeleton colors */
+  --skeleton-background: 224 15% 25%;
+  --skeleton-foreground: 210 40% 98%;
+
   /* Dark mode gradients */
   --gradient-primary: linear-gradient(
     135deg,
@@ -146,8 +165,8 @@
   );
 
   /* Dark mode shadows */
-  --shadow-primary: 0 10px 30px -10px hsl(var(--fitness-primary) / 0.4);
-  --shadow-card: 0 4px 20px -2px hsl(0 0% 0% / 0.4);
+  --shadow-primary: 0 10px 30px -10px hsl(var(--fitness-primary) / 0.5);
+  --shadow-card: 0 4px 20px -2px hsl(0 0% 0% / 0.2);
 
   --sidebar-background: 240 5.9% 10%;
   --sidebar-foreground: 240 4.8% 95.9%;
@@ -201,4 +220,43 @@
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+}
+
+/* Fitness color utilities */
+.text-fitness-primary {
+  color: var(--color-fitness-primary);
+}
+
+.text-fitness-secondary {
+  color: var(--color-fitness-secondary);
+}
+
+.text-fitness-accent {
+  color: var(--color-fitness-accent);
+}
+
+.text-fitness-success {
+  color: var(--color-fitness-success);
+}
+
+.text-fitness-warning {
+  color: var(--color-fitness-warning);
+}
+
+/* Shadow utilities */
+.shadow-primary {
+  box-shadow: var(--shadow-primary);
+}
+
+.shadow-card-enhanced {
+  box-shadow: var(--shadow-card);
+}
+
+.hover\:shadow-card-enhanced:hover {
+  box-shadow: var(--shadow-card);
+}
+
+/* Skeleton utilities */
+.bg-skeleton-background {
+  background-color: hsl(var(--skeleton-background));
 }
