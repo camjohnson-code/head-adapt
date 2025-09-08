@@ -48,10 +48,13 @@ export default function LoginPage() {
               <Button
                 onClick={() => router.push('/app')}
                 size='lg'
-                className='cursor-pointer w-full bg-fitness-primary hover:shadow-fitness text-primary-foreground font-semibold py-3'
+                className='cursor-pointer w-full bg-transparent hover:bg-transparent py-2 h-auto'
               >
-                <Activity className='mr-3 h-5 w-5' />
-                Connect with Strava
+                <img
+                  src='/btn_strava_connect_with_orange_x2.svg'
+                  alt='Connect with Strava'
+                  className='h-12 w-full max-w-xs'
+                />
               </Button>
 
               <div className='text-xs text-muted-foreground'>
