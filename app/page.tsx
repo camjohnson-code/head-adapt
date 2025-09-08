@@ -1,13 +1,16 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Activity, Sun, Moon, TrendingUp, Thermometer, BarChart3 } from 'lucide-react';
+import { TrendingUp, Thermometer, BarChart3 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle } from 'lucide-react';
 // import dashboardScreenshot from '@/assets/dashboard-screenshot.jpg';
 import { Header } from '@/components/Header';
+import { useRouter } from 'next/navigation';
 
 export const LandingPage = () => {
+  const router = useRouter();
+
   return (
     <div className='min-h-screen bg-background'>
       {/* Header */}
@@ -25,6 +28,7 @@ export const LandingPage = () => {
               Strava data and get insights into your heat adaptation progress over time.
             </p>
             <Button
+              onClick={() => router.push('/login')}
               size='lg'
               className='bg-gradient-primary cursor-pointer hover:shadow-fitness text-lg px-8 py-6 h-auto'
             >
@@ -152,10 +156,11 @@ export const LandingPage = () => {
               </div>
               <div className='pt-6 text-center'>
                 <Button
+                  onClick={() => router.push('/login')}
                   size='lg'
                   className='cursor-pointer bg-gradient-primary hover:shadow-fitness'
                 >
-                  Get Started with Strava
+                  Get Started
                 </Button>
               </div>
             </CardContent>

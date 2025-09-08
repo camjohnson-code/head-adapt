@@ -2,6 +2,7 @@ import { Moon, Sun, Activity } from 'lucide-react';
 import { Button } from './ui/button';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface HeaderProps {
   className?: string;
@@ -10,13 +11,18 @@ interface HeaderProps {
 export const Header = ({ className }: HeaderProps) => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   return (
-    <header className={`border-b border-gray-200/30 dark:border-gray-700/30 bg-card/10 backdrop-blur-sm ${className || ''}`}>
+    <header
+      className={`border-b border-gray-200/30 dark:border-gray-700/30 bg-card/10 backdrop-blur-sm ${
+        className || ''
+      }`}
+    >
       <div className='max-w-7xl mx-auto px-6 py-4'>
         <div className='flex items-center justify-between'>
           <div className='flex items-center space-x-3'>
@@ -44,6 +50,7 @@ export const Header = ({ className }: HeaderProps) => {
               )}
             </Button>
             <Button
+              onClick={() => router.push('/login')}
               className='bg-gradient-primary cursor-pointer hover:shadow-fitness font-medium'
               style={{ color: 'hsl(var(--primary-foreground))' }}
             >
